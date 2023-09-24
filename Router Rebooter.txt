@@ -1,0 +1,7 @@
+rule1 
+on Power1#Boot do backlog var1 0; var2 0; power1 1; ruletimer1 120 endon
+on Rules#Timer=1 do backlog WebQuery http://google.com GET endon
+on WebQuery#Data=Done do backlog var1 0; var2 0; ruletimer1 15 endon 
+on WebQuery#Data=Connect failed do backlog add1 1; event checkFailure=%var1%; ruletimer1 30 endon 
+on event#checkFailure>=4 do backlog event checkCycles=%var2% endon 
+on event#checkCycles<4 do backlog power1 0; delay 50; power1 1; var1 0; add2 1; ruletimer1 120 endon
