@@ -7,6 +7,6 @@ Reboots router on loss of internet using Tasmota device
 
 2. Set up your Tasmota device and configure WiFi
 3. Go to Tasmota device main menu, and click on console
-4. Copy and paste the rule code into the console
+4. Copy and paste the rule code from Router Rebooter.txt into the console
 5. Type rule1 1 to activate the rule
 6. You should now have a device that will cycle your router when connectivity to the internet is lost
